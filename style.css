@@ -8,8 +8,12 @@
   display: flex;
   background-color: red;
   justify-content: space-evenly;
-   list-style: none;
+  list-style: none;
 }
 
-
-
+.user-zone {
+  margin: 0 auto;
+  width: 700px;
+  height: 400px;
+  background-color: lightcyan;
+}
