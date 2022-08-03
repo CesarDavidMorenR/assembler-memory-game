@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lis-nav {
+  display: flex;
+  background-color: red;
+  justify-content: space-evenly;
+   list-style: none;
+}
+
