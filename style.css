@@ -7,11 +7,13 @@
 }
 /* CSS FINISH */
 
-.bodyfinish {
+body {
   max-width: 1500px;
   margin: 0 auto;
-  background-color: blue;
+  background-color: #8aa7ff;
 }
+
+
 
 .finalgame {
   display: flex;
@@ -19,10 +21,16 @@
   justify-content: center;
   flex-direction: column;
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  width: 60%;
+  width: 50%;
+  padding: 5%;
+  margin: 80px 50px 75px 80px;
+  border-radius: 6px;
+
 }
 .finalgame img {
   align-items: center;
+  width: 50%;
+  height: 50%;
 }
 
 .btn-play {
@@ -43,20 +51,39 @@
   color: white;
   border-radius: 6px;
   text-transform: uppercase;
-  margin-top: 20px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 200px;
   border: none;
 }
 
 .won {
-  text-transform: uppercase;
+  
   font-weight: bold;
+  margin: 10px;
 }
 
 #Score {
   display: none;
+}
+.bodyfinish{
+ display: flex;
+ gap: 5rem;
+
+ 
+
+}
+
+.finalscore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  width: 22%;
+  padding: 5%;
+  margin: 80px 50px 75px 50px;
+  border-radius: 6px;
+  
 }
 
 /* DAVID CSS - Begin */
