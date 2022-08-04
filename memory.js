@@ -7,6 +7,14 @@ let timer = 30;
 let timeInitial = 30;
 let showtime = document.getElementById("tiempo")
 
+let sound = new Audio('./sound/click boton.wav');
+let soundfail = new Audio('./sound/(fallo.wav');
+let soundgood = new Audio('./sound/acierto.wav');
+let winAudio = new Audio('./sound/ganar.wav');
+let loseAudio = new Audio('./sound/perder.wav');
+
+
+
 //generar numeros aleatorios//
 let numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
 numbers = numbers.sort(() => { return Math.random() - 0.5 });
@@ -16,7 +24,7 @@ console.log(numbers);
 let cardsturn = 0;
 let card1 = null;
 let card2 = null;
-let firsresult = null;
+let firstresult = null;
 let secondresult = null;
 let timestop = null;
 
@@ -25,9 +33,10 @@ function counttime(){
     timestop = setInterval(()=>{
         timer--;
         showtime.innerHTML = `Time: ${timer} seconds`;
-        if(timer == 0){
+        if(timer === 0){
         clearInterval(timestop);
         lockCard();
+        loseAudio.play();
         }
     },800);
 }
@@ -41,21 +50,22 @@ for(let i = 0; i<=15; i++){
 
 function turn(id) {
 
-    if(time == false){
+    if(time === false){
         counttime();
         time = true;
     }
     cardsturn++;
     console.log(cardsturn);
 
-    if (cardsturn == 1) {
+    if (cardsturn === 1) { 
         card1 = document.getElementById(id);
-        firsresult = numbers[id];
-        card1.innerHTML = firsresult;
+        firstresult = numbers[id];
+        card1.innerHTML = firstresult; //cambiar aki//
+        sound.play();
 
         //deshabilitar el primerboton//
         card1.disabled = true;
-    } else if (cardsturn == 2) {
+    } else if (cardsturn === 2) {
 
         //mostras segund numero//
         card2 = document.getElementById(id);
@@ -69,14 +79,16 @@ function turn(id) {
         moves++;
         showmoves.innerHTML = `Moves: ${moves}`;   //estp//
 
-        if (firsresult == secondresult) {
+        if (firstresult === secondresult) {
             cardsturn = 0;
 
             //aciertos//
             hits++;
             showhits.innerHTML = `Hits: ${hits}`;//estp//
+            soundgood.play();
 
-            if (hits == 8) {
+            if (hits === 8) {
+                winAudio.play();
                 clearInterval(timestop);
                 showhits.innerHTML = `Hits: ${hits} good`;
                 showtime.innerHTML = `blabla: ${timeInitial - timer} segundos`;
@@ -85,6 +97,7 @@ function turn(id) {
 
 
         } else {
+            soundfail.play();
             //mostrar valores de forma mometanea//
             setTimeout(() => {
                 card1.innerHTML = ' ';
