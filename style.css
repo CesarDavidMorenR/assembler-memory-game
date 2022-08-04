@@ -62,7 +62,7 @@ body {
   margin: 10px;
 }
 
-#Score {
+.Score {
   display: none;
 }
 .bodyfinish{
