@@ -4,16 +4,16 @@ let btnStart = document.getElementById("btn-start");
 
 let primerName = document.getElementById("primer-nombre");
 
-// let myPlayers = {
-//   totalPlayers: 0,
-//   players: [],
-// }
+let myPlayers = {
+  totalPlayers: 0,
+  players: [],
+}
 
 if (localStorage.getItem("players") !== null) {
-  primerName.textContent = localStorage.getItem("players");
+  // primerName.textContent = localStorage.getItem("players");
   
 } else {
-  primerName.textContent = "-----";
+  // primerName.textContent = "-----";
 }
 
 btnStart.addEventListener("click", () => {
