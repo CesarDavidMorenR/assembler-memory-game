@@ -77,7 +77,7 @@ function turn(id) {
             showhits.innerHTML = `Hits: ${hits}`;//estp//
 
             if (hits == 8) {
-                clearInterval();
+                clearInterval(timestop);
                 showhits.innerHTML = `Hits: ${hits} good`;
                 showtime.innerHTML = `blabla: ${timeInitial - timer} segundos`;
                 showmoves.innerHTML = `Moves: ${moves} go`;
