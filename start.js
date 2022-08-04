@@ -14,6 +14,11 @@ let score = document.getElementById("score");
 if (localStorage.getItem("players") !== null) {
   primerName.textContent = localStorage.getItem("players");
   nameScore.textContent = localStorage.getItem("players");
+  let date = new Date();
+  time.textContent = setInterval(() => {
+    date.getSeconds();
+  }, 10);
+  score.textContent = "0";
 } else {
   primerName.textContent = "-----";
 }
