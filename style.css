@@ -6,13 +6,19 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #0055ab;
+.bodyfinish {
+  background-color: #95b7ff;
 }
+     /* CSS FINISH */
 
 .finalgame {
   align-items: center;
   justify-content: center;
+}
+.finalgame img{
+  align-items: center;
+  margin: 200px;
+  margin-top: 20px;
 }
 
 .btn-play {
