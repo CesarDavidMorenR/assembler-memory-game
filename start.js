@@ -15,9 +15,7 @@ if (localStorage.getItem("players") !== null) {
   primerName.textContent = localStorage.getItem("players");
   nameScore.textContent = localStorage.getItem("players");
   let date = new Date();
-  time.textContent = setInterval(() => {
-    date.getSeconds();
-  }, 10);
+
   score.textContent = "0";
 } else {
   primerName.textContent = "-----";
@@ -28,6 +26,10 @@ let btnStart = document.getElementById("btn-start");
 btnStart.addEventListener("click", () => {
   // let mainBody = document.querySelector(".main-dad");
   let name = document.getElementById("nombre-user").value;
+
+  time.textContent = setInterval(() => {
+    date.getSeconds();
+  }, 10);
 
   localStorage.setItem("players", name);
   window.location.reload();
