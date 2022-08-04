@@ -11,14 +11,25 @@ let score = document.getElementById("score");
 //   players: [],
 // }
 
+let timestop = null;
+
 if (localStorage.getItem("players") !== null) {
+  let timer = 778;
   primerName.textContent = localStorage.getItem("players");
   nameScore.textContent = localStorage.getItem("players");
-  let date = new Date();
+  timestop = setInterval(() => {
+    timer--;
+    time.textContent = timer;
+    if (timer == 0) {
+      clearInterval(timestop);
+    }
+  }, 1000);
 
   score.textContent = "0";
 } else {
-  primerName.textContent = "-----";
+  primerName.textContent = "------";
+  nameScore.textContent = "------";
+  time.textContent = "777 seconds";
 }
 
 let btnStart = document.getElementById("btn-start");
@@ -27,11 +38,8 @@ btnStart.addEventListener("click", () => {
   // let mainBody = document.querySelector(".main-dad");
   let name = document.getElementById("nombre-user").value;
 
-  time.textContent = setInterval(() => {
-    date.getSeconds();
-  }, 10);
-
   localStorage.setItem("players", name);
+  // localStorage.setItem("scoring", name);
   window.location.reload();
   // mainBody.style.display = "none";
 });
