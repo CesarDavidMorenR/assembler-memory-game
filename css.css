@@ -9,3 +9,8 @@ display: flex;
 .titulo{
   grid-column: 1/5;
 }
+
+.botones{
+  width: 100px;
+  height: 100px;
+}
