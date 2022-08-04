@@ -6,3 +6,6 @@ display: flex;
   display: grid; 
    grid-template-columns: repeat(4, 1fr);
 }
+.titulo{
+  grid-column: 1/5;
+}
