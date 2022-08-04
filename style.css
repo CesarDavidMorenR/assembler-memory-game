@@ -29,22 +29,25 @@ body {
 
 /* DAVID CSS - Begin */
 
-.lis-nav{
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
-    background-color: red;
+.lis-nav {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  background-color: red;
 }
 
-.user-zone{
-    background-color: lightcyan;
-    width: 700px;
-    height: 400px;
-    margin: 0 auto;
-    display:flex;
-    justify-content: space-evenly;
+.user-zone {
+  background-color: lightcyan;
+  width: 700px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-
+#main-body {
+  max-width: 1500px;
+  margin: 0 auto;
+}
 
 /* David CSS - End */

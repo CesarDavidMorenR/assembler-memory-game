@@ -6,36 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="icon" href="./assets/memory-game-icon.png" />
+    <script src="start.js" defer></script>
     <title>Memory game</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul class="lis-nav">
-          <li>Home</li>
-          <li>Puntuaciones</li>
-          <li>Creadores</li>
-        </ul>
-      </nav>
-    </header>
+    <div id="main-body" class="main-dad">
+      <header>
+        <nav>
+          <ul class="lis-nav">
+            <li>Home</li>
+            <li>Puntuaciones</li>
+            <li>Creadores</li>
+          </ul>
+        </nav>
+      </header>
 
-    <main>
-      <div class="user-zone">
-        <form action="">
-          <input type="text" placeholder="Nombre" />
-          <input type="button" value="Confirmar" />
-          <p>Pull resquessass</p>
-        </form>
-        <section class="score-zone">
-          <h1>User Scores</h1>
-          <h3>Nombre</h3>
-          <p>David</p>
-        </section>
-      </div>
-    </main>
-
-    <footer>
-      Assembler Memory Game, by: Jackson Eli Thalita Christian David
-    </footer>
+      <main>
+        <div class="user-zone">
+          <form action="">
+            <input type="text" placeholder="Nombre" />
+            <input type="button" value="Confirmar" id="btn-start" />
+            <p>Pull resquessass</p>
+          </form>
+          <section class="score-zone">
+            <h1>User Scores</h1>
+            <h3>Nombre</h3>
+            <p>David</p>
+          </section>
+        </div>
+      </main>
+      <footer>
+        Assembler Memory Game, by: Jackson Eli Thalita Christian David
+      </footer>
+    </div>
   </body>
 </html>
