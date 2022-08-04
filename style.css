@@ -5,15 +5,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+ /* CSS FINISH */
 
-.bodyfinish {
+
+body {
   background-color: #95b7ff;
+  
+  
+
 }
-     /* CSS FINISH */
+    
 
 .finalgame {
+  display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  width: 60%;
+  margin: 40px;
+  margin-bottom: 300px;
+
 }
 .finalgame img{
   align-items: center;
@@ -22,15 +34,17 @@
 }
 
 .btn-play {
-  height: 40px;
-  width: 80px;
-  background-color: #f3c7ed;
+  height: 50px;
+  width: 150px;
+  background: linear-gradient(135deg, #ff9f66 0, #ff9366 12.5%, #ff8362 25%,
+  #ff6e5c 37.5%, #f25353 50%, #e3334c 62.5%, #d70349 75%, #ce004b 87.5%, #c70051 100%);
   color: white;
   border-radius: 6px;
   text-transform: uppercase;
   margin-top: 20px;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 200px;
 }
 
 /* DAVID CSS - Begin */
