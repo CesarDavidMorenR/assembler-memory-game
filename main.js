@@ -16,11 +16,11 @@ let mostrarTiempo = document.getElementById('tiempo')
 //documento HTML aciertos
 let mostrarAciertos = document.getElementById('aciertos')
 
-let correctAudio = new Audio('./Sound/correct.wav');
-let loseAudio = new Audio('./Sound/lose.wav');
-
-
-
+let sound = new Audio('./sound/click boton.wav');
+let soundfail = new Audio('./sound/sound (fallo.wav');
+let soundgood = new Audio('./sound/sound acierto.wav');
+let winAudio = new Audio('./sound/sound ganar.wav');
+let loseAudio = new Audio('./sound/sound perder.wav');
 
 //numero aleatorio
 let numeros = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
@@ -36,9 +36,10 @@ tiempoRegresivoId = setInterval(()=>{
     mostrarTiempo.innerHTML = `Tiempo: ${timer} segundos`;
  if(timer ==0){
     clearInterval(tiempoRegresivoId);
+    loseAudio.play();
     bloquearTarjetas();
  }
-},1000);
+},800);
 }
 
 function bloquearTarjetas(){
@@ -65,7 +66,8 @@ if (temporizador == false){
  tarjeta1 = document.getElementById(id);
  primerResultado = numeros[id]
  tarjeta1.innerHTML = `<img src="./assets/${primerResultado}.jpg" alt="">`;
-correctAudio.play();
+ sound.play();
+
 //que se quede en el mostrador
  tarjeta1.disabled = true;
 //segundo numero
@@ -85,13 +87,16 @@ tarjetas= 0;
 //Aumentar aciertos
 aciertos++
 mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
+soundgood.play();
 
 if(aciertos == 8){
+    winAudio.play();
  mostrarAciertos.innerHTML = `Aciertos: ${aciertos}😁`
  mostrarMovimientos.innerHTML =`Movimientos: ${movimientos} Equipo Turing😘`
 }
 
 }else{
+    soundfail.play();
 //mostrar mas
 setTimeout(()=>{
     tarjeta1.innerHTML = '';

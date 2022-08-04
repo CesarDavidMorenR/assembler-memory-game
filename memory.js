@@ -8,10 +8,10 @@ let timeInitial = 30;
 let showtime = document.getElementById("tiempo")
 
 let sound = new Audio('./sound/click boton.wav');
-let soundfail = new Audio('./sound/(fallo.wav');
-let soundgood = new Audio('./sound/acierto.wav');
-let winAudio = new Audio('./sound/ganar.wav');
-let loseAudio = new Audio('./sound/perder.wav');
+let soundfail = new Audio('./sound/sound (fallo.wav');
+let soundgood = new Audio('./sound/sound acierto.wav');
+let winAudio = new Audio('./sound/sound ganar.wav');
+let loseAudio = new Audio('./sound/sound perder.wav');
 
 
 
@@ -60,7 +60,7 @@ function turn(id) {
     if (cardsturn === 1) { 
         card1 = document.getElementById(id);
         firstresult = numbers[id];
-        card1.innerHTML = firstresult; //cambiar aki//
+        card1.innerHTML = firstresult; //`<img src="./assets/${secondresult}.jpg" alt="">`; //cambiar aki//
         sound.play();
 
         //deshabilitar el primerboton//
