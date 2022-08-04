@@ -39,7 +39,7 @@ btnStart.addEventListener("click", () => {
   let name = document.getElementById("nombre-user").value;
 
   localStorage.setItem("players", name);
-  // localStorage.setItem("scoring", name);
+  localStorage.setItem("scoring", name);
   window.location.reload();
   // mainBody.style.display = "none";
 });
