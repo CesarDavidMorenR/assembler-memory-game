@@ -45,6 +45,17 @@ body {
   font-weight: bold;
   text-align: center;
   margin-bottom: 200px;
+  border: none;
+}
+
+.won{
+  text-transform: uppercase;
+  font-weight: bold;
+
+}
+
+#Score{
+  display: none;
 }
 
 /* DAVID CSS - Begin */
