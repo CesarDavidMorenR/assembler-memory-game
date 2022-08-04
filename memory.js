@@ -1,11 +1,11 @@
 let moves = 0;
-let showmoves = document.getElementById("el de movimientos del html")
+let showmoves = document.getElementById("moves")
 let hits = 0;
-let showhits = document.getElementById("el de aciertos del html");
+let showhits = document.getElementById("hits");
 
 //generar numeros aleatorios//
-let numbers = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
-numbers = numbers.sort(()=>{return Math.random()-0.5});
+let numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+numbers = numbers.sort(() => { return Math.random() - 0.5 });
 console.log(numbers);
 
 //funcion del cambio//
@@ -16,18 +16,18 @@ let firsresult = null;
 let secondresult = null;
 
 
-function turn(id){
+function turn(id) {
     cardsturn++;
     console.log(cardsturn);
 
-    if(cardsturn == 1){
+    if (cardsturn == 1) {
         card1 = document.getElementById(id);
         firsresult = numbers[id];
         card1.innerHTML = firsresult;
 
-//deshabilitar el primerboton//
+        //deshabilitar el primerboton//
         card1.disabled = true;
-    }else if(cardsturn == 2){
+    } else if (cardsturn == 2) {
 
         //mostras segund numero//
         card2 = document.getElementById(id);
@@ -39,23 +39,30 @@ function turn(id){
 
         //movimientos//aun no
         moves++;
-        showmoves.innerHTML = `Moves: ${moves}`;//estp//
+        showmoves.innerHTML = `Moves: ${moves}`;   //estp//
 
-        if(firsresult == secondresult){
-            cardsturn = 0;   
+        if (firsresult == secondresult) {
+            cardsturn = 0;
 
             //aciertos//
             hits++;
-            showhits.innerHTML = `Aciertos: ${hits}`;//estp//
-        }else{
+            showhits.innerHTML = `Hits: ${hits}`;//estp//
+
+            if (hits == 8) {
+                showhits.innerHTML = `Hits: ${hits} good`;
+                showmoves.innerHTML = `Moves: ${moves} go`;
+            }
+
+
+        } else {
             //mostrar valores de forma mometanea//
-            setTimeout(()=>{
+            setTimeout(() => {
                 card1.innerHTML = ' ';
                 card2.innerHTML = ' ';
                 card1.disabled = false;
                 card2.disabled = false;
                 cardsturn = 0;
-            },2000);
+            }, 2000);
         }
 
     }
