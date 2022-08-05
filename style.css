@@ -105,4 +105,39 @@ body {
   display: none;
 }
 
+.main-card {
+  width: 900px;
+  margin: 100px auto 50px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  align-items: center;
+}
+
+.card-body {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  font-family: sans-serif;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.02);
+  text-align: center;
+}
+
+.estadisticas {
+  border: 1px solid white;
+  height: 100px;
+  border-radius: 8px;
+  padding: 8px 20px;
+  box-sizing: border-box;
+}
+
 /* David CSS - End */

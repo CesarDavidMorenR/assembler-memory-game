@@ -44,7 +44,7 @@ btnStart.addEventListener("click", (e) => {
   // mainBody.style.display = "none";
   let bodyStart = document.querySelector(".main-dad");
   bodyStart.style.display = "none";
-  let bodyCard = document.querySelector(".main-card");
+  let bodyCard = document.querySelector(".card-dad");
   bodyCard.classList.remove("card-dad");
   e.preventDefault();
 });
