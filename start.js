@@ -15,8 +15,7 @@ let timestop = null;
 
 if (localStorage.getItem("players") !== null) {
   let timer = 778;
-  primerName.textContent = localStorage.getItem("players");
-  nameScore.textContent = localStorage.getItem("players");
+
   timestop = setInterval(() => {
     timer--;
     time.textContent = timer;
@@ -47,6 +46,13 @@ btnStart.addEventListener("click", (e) => {
   let bodyCard = document.querySelector(".card-dad");
   bodyCard.classList.remove("card-dad");
   e.preventDefault();
+
+  let namePlayer = localStorage.getItem("players");
+
+  primerName.textContent = namePlayer;
+  nameScore.textContent = namePlayer;
+  let actualPlayer = document.getElementById("actual-player-info");
+  actualPlayer.textContent = `${namePlayer} is currently playing`;
 });
 
 /* David -End */
