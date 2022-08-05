@@ -13,8 +13,6 @@ body {
   background-color: #8aa7ff;
 }
 
-
-
 .finalgame {
   display: flex;
   align-items: center;
@@ -25,7 +23,6 @@ body {
   padding: 5%;
   margin: 80px 50px 75px 80px;
   border-radius: 6px;
-
 }
 .finalgame img {
   align-items: center;
@@ -57,7 +54,6 @@ body {
 }
 
 .won {
-  
   font-weight: bold;
   margin: 10px;
 }
@@ -65,12 +61,9 @@ body {
 .Score {
   display: none;
 }
-.bodyfinish{
- display: flex;
- gap: 5rem;
-
- 
-
+.bodyfinish {
+  display: flex;
+  gap: 5rem;
 }
 
 .finalscore {
@@ -83,7 +76,6 @@ body {
   padding: 5%;
   margin: 80px 50px 75px 50px;
   border-radius: 6px;
-  
 }
 
 /* DAVID CSS - Begin */
@@ -107,6 +99,10 @@ body {
 #main-body {
   max-width: 1500px;
   margin: 0 auto;
+}
+
+.card-dad {
+  display: none;
 }
 
 /* David CSS - End */

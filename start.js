@@ -34,14 +34,19 @@ if (localStorage.getItem("players") !== null) {
 
 let btnStart = document.getElementById("btn-start");
 
-btnStart.addEventListener("click", () => {
+btnStart.addEventListener("click", (e) => {
   // let mainBody = document.querySelector(".main-dad");
   let name = document.getElementById("nombre-user").value;
 
   localStorage.setItem("players", name);
   localStorage.setItem("scoring", name);
-  window.location.reload();
+  // window.location.reload();
   // mainBody.style.display = "none";
+  let bodyStart = document.querySelector(".main-dad");
+  bodyStart.style.display = "none";
+  let bodyCard = document.querySelector(".main-card");
+  bodyCard.classList.remove("card-dad");
+  e.preventDefault();
 });
 
 /* David -End */
