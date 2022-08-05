@@ -60,7 +60,7 @@ function turn(id) {
     if (cardsturn === 1) { 
         card1 = document.getElementById(id);
         firstresult = numbers[id];
-        card1.innerHTML = firstresult; //`<img src="./assets/${secondresult}.jpg" alt="">`; //cambiar aki//
+        card1.innerHTML =`<img src="./assets/${firstresult}.jpg" alt="">`; //cambiar aki//
         sound.play();
 
         //deshabilitar el primerboton//
@@ -70,7 +70,7 @@ function turn(id) {
         //mostras segund numero//
         card2 = document.getElementById(id);
         secondresult = numbers[id];
-        card2.innerHTML = secondresult;
+        card2.innerHTML =`<img src="./assets/${secondresult}.jpg" alt="">`;
 
         //deshabilitar el segundo//
         card2.disabled = true;
