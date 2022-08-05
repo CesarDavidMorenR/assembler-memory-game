@@ -42,9 +42,9 @@ btnStart.addEventListener("click", (e) => {
   // window.location.reload();
   // mainBody.style.display = "none";
   let bodyStart = document.querySelector(".main-dad");
-  // bodyStart.style.display = "none";
+  bodyStart.style.display = "none";
   let bodyCard = document.querySelector(".card-dad");
-  // bodyCard.classList.remove("card-dad");
+  bodyCard.classList.remove("card-dad");
   e.preventDefault();
 
   let namePlayer = localStorage.getItem("players");
