@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js" defer></script>
+    <script src="memory.js" defer></script>
     <title>Memory Game</title>
   </head>
   <body>
@@ -13,16 +13,17 @@
  <div class="bodyfinish">   
       <div class="finalgame">
         <img src="./assets/youwin.gif" alt="win" />
-        <p class="won">Your won in <input class="Score" id="tiempo"> seconds.</p>
+        <p class="won">Your won in <input class="Score" id='tiempo'> seconds.</p>
         <button class="btn-play" id="btn-play">Play again</button>
       
     </div>
 <div class="finalscore">
-    <p>persona</p>
-    <p>tiempo</p>
+   <h4>User Scores</h4>
+    <p>Mark</p>
+    <p><input class="Score" id='tiempo'>seconds</p>
 
 </div>
   </div>  
-  <script src="memory.js"></script>
+  
   </body>
 </html>
