@@ -7,11 +7,6 @@
 }
 /* CSS FINISH */
 
-body {
-  max-width: 1500px;
-  margin: 0 auto;
-  background-color: #8aa7ff;
-}
 
 .finalgame {
   display: flex;
