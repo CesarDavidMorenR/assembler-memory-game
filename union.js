@@ -34,7 +34,7 @@ function counttime() {
     timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 1000) {
+    if (timer === 2) {
       clearInterval(timestop);
 
       lockCard();
