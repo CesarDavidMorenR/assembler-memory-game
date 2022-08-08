@@ -106,6 +106,73 @@ h3 {
   margin-top: 50px;
 }
 
+
+
+
+/* CSS FINISH */
+
+.finalgame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  width: 50%;
+  margin: 80px 50px 75px 80px;
+  border-radius: 6px;
+}
+.finalgame img {
+  align-items: center;
+  width: 50%;
+  height: 50%;
+}
+
+.btn-play {
+  height: 50px;
+  width: 150px;
+  background: linear-gradient(
+    135deg,
+    #ff9f66 0,
+    #ff9366 12.5%,
+    #ff8362 25%,
+    #ff6e5c 37.5%,
+    #f25353 50%,
+    #e3334c 62.5%,
+    #d70349 75%,
+    #ce004b 87.5%,
+    #c70051 100%
+  );
+  color: white;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  border: none;
+}
+
+.won {
+  font-weight: bold;
+  margin: 10px;
+}
+
+.Score {
+  display: none;
+}
+.bodyfinish {
+  display: flex;
+  gap: 5rem;
+}
+
+.finalscore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  width: 22%;
+  margin: 80px 50px 75px 50px;
+  border-radius: 6px;
+}
 .finish5 {
   display: none;
 }

@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       hideCards();
-    }, 500);
+    }, 800);
   });
 });
 
