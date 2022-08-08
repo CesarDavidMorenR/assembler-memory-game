@@ -101,9 +101,6 @@ img {
 .user-zone {
   text-align: center;
   padding: 300px;
-  display: flex;
-
-  gap: 100px;
 }
 h3 {
   margin-top: 50px;
@@ -170,20 +167,6 @@ h3 {
   margin: 80px 50px 75px 50px;
   border-radius: 6px;
 }
-
-.userName {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 20px;
-}
-
-.score-zone {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 20px;
-}
-
 .finish5 {
   display: none;
 }
