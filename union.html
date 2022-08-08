@@ -1,117 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <link href="/union.css" rel="stylesheet" type="text/css" />
+  </head>
 
-  <link href="/union.css" rel="stylesheet" type="text/css" />
-</head>
+  <body>
+    <div id="user-zonePrincipal">
+      <header>
+        <nav>
+          <ul class="lis-nav">
+            <li>Home</li>
+            <li>Puntuaciones</li>
+            <li>Creadores</li>
+          </ul>
+        </nav>
+      </header>
 
-<body>
+      <main>
+        <div class="user-zone">
+          <form>
+            <input type="text" placeholder="Nombre" id="nombre-user" />
+            <input
+              type="button"
+              value="Confirmar y Jugar"
+              id="btn-start"
+              class="btn-play"
+            />
+          </form>
+          <section class="score-zone">
+            <h1>User Stats and time</h1>
+            <h3>Name</h3>
+            <p id="name"></p>
+            <h3>Game duration</h3>
+            <p id="time"></p>
+          </section>
+        </div>
+      </main>
+      <footer>
+        Assembler Memory Game, by: Jackson Eli Thalita Christian David
+      </footer>
+    </div>
 
-  <div id="user-zonePrincipal">
-    <header>
-      <nav>
-        <ul class="lis-nav">
-          <li>Home</li>
-          <li>Puntuaciones</li>
-          <li>Creadores</li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <div class="user-zone">
-        <form>
-          <input type="text" placeholder="Nombre" id="nombre-user" />
-          <input type="button" value="Confirmar y Jugar" id="btn-start" class="btn-play" />
-        </form>
-        <section class="score-zone">
-          <h1>User Stats and time</h1>
-          <h3>Name</h3>
-          <p id="name"></p>
-          <h3>Game duration</h3>
-          <p id="time"></p>
+    <div id="main-body" class="finish5">
+      <main class="images-juego main">
+        <section class="container">
+          <h2 class="titulo">Guess the right card</h2>
+          <div><button class="botones" id="0" onclick="turn(0)"></button></div>
+          <div><button class="botones" id="1" onclick="turn(1)"></button></div>
+          <div><button class="botones" id="2" onclick="turn(2)"></button></div>
+          <div><button class="botones" id="3" onclick="turn(3)"></button></div>
+          <div><button class="botones" id="4" onclick="turn(4)"></button></div>
+          <div><button class="botones" id="5" onclick="turn(5)"></button></div>
+          <div><button class="botones" id="6" onclick="turn(6)"></button></div>
+          <div><button class="botones" id="7" onclick="turn(7)"></button></div>
+          <div><button class="botones" id="8" onclick="turn(8)"></button></div>
+          <div><button class="botones" id="9" onclick="turn(9)"></button></div>
+          <div>
+            <button class="botones" id="10" onclick="turn(10)"></button>
+          </div>
+          <div>
+            <button class="botones" id="11" onclick="turn(11)"></button>
+          </div>
+          <div>
+            <button class="botones" id="12" onclick="turn(12)"></button>
+          </div>
+          <div>
+            <button class="botones" id="13" onclick="turn(13)"></button>
+          </div>
+          <div>
+            <button class="botones" id="14" onclick="turn(14)"></button>
+          </div>
+          <div>
+            <button class="botones" id="15" onclick="turn(15)"></button>
+          </div>
         </section>
+        <section>
+          <p id="actual-player-info"></p>
+          <p id="name-score"></p>
+          <h2 id="hits">Hits: 0</h2>
+          <h2 id="tiempo">tiempo: 0 seconds</h2>
+          <h2 id="moves">Moves: 0</h2>
+        </section>
+      </main>
+    </div>
+
+    <div id="main-bodyfinish" class="finish5">
+      <!-- finish-->
+      <div class="bodyfinish">
+        <div class="finalgame">
+          <img src="./assets/youwin.gif" alt="win" />
+          <p class="won">Your won in</p>
+          <p  id="tiempo-win">seconds</p>
+          <button class="btn-play" id="btn-play-win">Play again</button>
+        </div>
+
+        <div class="finalscore">
+          <p>persona</p>
+          <p>tiempo</p>
+        </div>
       </div>
-    </main>
-    <footer>
-      Assembler Memory Game, by: Jackson Eli Thalita Christian David
-    </footer>
-  </div>
+      <!--end finish-->
+    </div>
 
-  <div id="main-body" class="finish5">
-    <main class="images-juego main">
-      <section class="container">
+    <!-- class="win-dad borrar -->
 
-        <h2 class="titulo">Guess the right card</h2>
-        <div><button class="botones" id="0" onclick="turn(0)"></button></div>
-        <div><button class="botones" id="1" onclick="turn(1)"></button></div>
-        <div><button class="botones" id="2" onclick="turn(2)"></button></div>
-        <div><button class="botones" id="3" onclick="turn(3)"></button></div>
-        <div><button class="botones" id="4" onclick="turn(4)"></button></div>
-        <div><button class="botones" id="5" onclick="turn(5)"></button></div>
-        <div><button class="botones" id="6" onclick="turn(6)"></button></div>
-        <div><button class="botones" id="7" onclick="turn(7)"></button></div>
-        <div><button class="botones" id="8" onclick="turn(8)"></button></div>
-        <div><button class="botones" id="9" onclick="turn(9)"></button></div>
-        <div><button class="botones" id="10" onclick="turn(10)"></button></div>
-        <div><button class="botones" id="11" onclick="turn(11)"></button></div>
-        <div><button class="botones" id="12" onclick="turn(12)"></button></div>
-        <div><button class="botones" id="13" onclick="turn(13)"></button></div>
-        <div><button class="botones" id="14" onclick="turn(14)"></button></div>
-        <div><button class="botones" id="15" onclick="turn(15)"></button></div>
-      </section>
-      <section>
-      <p id="actual-player-info"></p>
-      <p id="name-score"></p>
-        <h2 id="hits">Hits: 0</h2>
-        <h2 id="tiempo">tiempo: 0 seconds</h2>
-        <h2 id="moves">Moves: 0</h2>
-      </section>
-    </main>
-  </div>
-
-<div id="main-bodyfinish"  class="finish5">
-
-  <!-- finish-->
-  <div class="bodyfinish">   
-    <div class="finalgame">
-      <img src="./assets/youwin.gif" alt="win" />
-      <p class="won">Your won in <input class="Score" id="tiempo"> seconds.</p>
-      <button class="btn-play" id="btn-play">Play again</button>
-  </div>
-
-   <div class="finalscore">
-  <p>persona</p>
-  <p>tiempo</p>
-   </div>
-  </div>  
-<!--end finish-->
-</div>
-
-<!-- class="win-dad borrar -->
-
- <div class="bodyfinish finish5" id="papafinal">   
-    <div class="finalgame">
-      <img src="./assets/loser.gif" alt="lost" />
-     <br>
-      <button class="btn-play" id="btn-play">Play again</button>
+    <div class="bodyfinish finish5" id="papafinal">
+      <div class="finalgame">
+        <img src="./assets/loser.gif" alt="lost" />
+        <br />
+        <button class="btn-play" id="btn-play-lost">Play again</button>
       </div>
-    
-<div class="finalscore">
- <h4>User Scores</h4>
-  <p>Mark</p>
- 
 
-</div>
-</div>   
+      <div class="finalscore">
+        <h4>User Scores</h4>
+        <p>Mark</p>
+        <p id="tiempo-lost"></p>
+      </div>
+    </div>
 
-
-<script src="union.js"></script>
-</body>
-
+    <script src="union.js"></script>
+  </body>
 </html>
