@@ -34,19 +34,25 @@ function counttime() {
     timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 1000) {
+    if (timer === 60) {
       clearInterval(timestop);
 
       lockCard();
-      let showtimefinish = document.getElementById("tiempofinish");
+      let timeDurationVar = timer - timeInitial;
+      localStorage.setItem("timestop", timeDurationVar);
+
+      let showtimefinish = document.getElementById("time");
       loseAudio.play();
       let papafinalwin = document.getElementById("papafinal");
       papafinalwin.classList.remove("finish5");
       let tarjetafinal = document.getElementById("main-body");
       tarjetafinal.classList.add("finish5");
       showtimefinish.innerHTML = timeInitial - timer;
+
+      let showtimeWin = document.getElementById("tiempo-lost");
+      showtimeWin.innerHTML = localStorage.getItem("timestop");
     }
-  }, 30);
+  }, 1000);
 }
 
 /* Oculta imagenes , funcion que se llama en el listener LINEA 186,187,188  */
@@ -106,15 +112,22 @@ function turn(id) {
       if (hits === 8) {
         winAudio.play();
         clearInterval(timestop);
+        let timeDurationVar = timer - timeInitial;
+        localStorage.setItem("timestop", timeDurationVar);
+        let timeDuration = localStorage.getItem("timestop");
         showhits.innerHTML = `Hits: ${hits} hits`;
-        showtime.innerHTML = `Your time: ${timeInitial - timer} seconds`;
+        showtime.innerHTML = `Your time: ${timeDuration} seconds`;
         showmoves.innerHTML = `Moves: ${moves} <Equipo Turing😁>`;
-        let showtimefinish = document.getElementById("tiempofinish");
+
+        let showtimeWin = document.getElementById("tiempo-win");
+        showtimeWin.innerHTML = localStorage.getItem("timestop");
+
+        let showtimefinish = document.getElementById("time");
+        showtimefinish.innerHTML = timeDuration;
         let papafinalwin = document.getElementById("main-bodyfinish");
         papafinalwin.classList.remove("finish5");
         let tarjetafinal = document.getElementById("main-body");
         tarjetafinal.classList.add("finish5");
-        showtimefinish.innerHTML = timeInitial - timer;
       }
     } else {
       soundfail.play();
@@ -129,6 +142,10 @@ function turn(id) {
     }
   }
 }
+
+let primerName = document.getElementById("name");
+let namePlayer = localStorage.getItem("players");
+primerName.textContent = namePlayer;
 
 document.addEventListener("DOMContentLoaded", () => {
   let primerName = document.getElementById("name");
@@ -170,7 +187,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       hideCards();
-    }, 3000);
+    }, 800);
+  });
+
+  let btnWon = document.getElementById("btn-play-win");
+  let btnLost = document.getElementById("btn-play-lost");
+
+  btnWon.addEventListener("click", () => {
+    window.location.reload();
+  });
+
+  btnLost.addEventListener("click", () => {
+    window.location.reload();
   });
 });
 
