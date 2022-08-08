@@ -4,10 +4,16 @@
     box-sizing: border-box;
   }
 
+
+html{
+  width: 100%;
+  height: 100%;
+}
 body{
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
     font-family: sans-serif;
     color: white;
+    background-repeat: no-repeat;
     }
     
     .main{
@@ -78,10 +84,21 @@ body{
     }
     
     #actual-player-info{
-      color: blue;
-      font-size: 50px;
+      background: rgb(63,94,251);
+      background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+      font-size: 35px;
+      text-align: center;
     }
 
     .borrar{
         display: none;
       }
+    .user-zone{
+      text-align: center;
+      padding: 300px;
+    }
+    h3{
+      margin-top: 50px;
+    }
+
+    

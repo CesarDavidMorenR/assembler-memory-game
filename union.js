@@ -1,12 +1,14 @@
   
 
+
+
 let moves = 0;
 let showmoves = document.getElementById("moves")
 let hits = 0;
 let showhits = document.getElementById("hits");
 let time = false;
-let timer = 30;
-let timeInitial = 30;
+let timer = 0;
+let timeInitial = 0;
 let showtime = document.getElementById("tiempo")
 
 let sound = new Audio('./sound/click boton.wav');
@@ -35,15 +37,15 @@ let timestop = null;
 //contar tiempo
 function counttime() {
   timestop = setInterval(() => {
-    timer--;
+    timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 0) {
+    if (timer === 60) {
       clearInterval(timestop);
       lockCard();
       loseAudio.play();
     }
-  }, 800);
+  }, 1000);
 }
 
 /* Oculta imagenes , funcion que se llama en el listener LINEA 186,187,188  */
@@ -114,9 +116,9 @@ function turn(id) {
       if (hits === 8) {
         winAudio.play();
         clearInterval(timestop);
-        showhits.innerHTML = `Hits: ${hits} good`;
-        showtime.innerHTML = `Your time: ${timeInitial - timer} segundos`;
-        showmoves.innerHTML = `Moves: ${moves} go`;
+        showhits.innerHTML = `Hits: ${hits} hits`;
+        showtime.innerHTML = `Your time: ${timeInitial - timer} seconds`;
+        showmoves.innerHTML = `Moves: ${moves} <Equipo Turing😁>`;
       }
 
     } else {
@@ -150,13 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("scoring", name);
     // window.location.reload();
     // mainBody.style.display = "none";
-
     let bodyStart = document.querySelector(".main-dad");
     bodyStart.style.display = "none";
     let bodyCard = document.querySelector(".card-dad");
     bodyCard.classList.remove("card-dad");
     e.preventDefault();
 
+<<<<<<< HEAD
+=======
 document.addEventListener("DOMContentLoaded", () => {    
     let bodyCard = document.querySelector(".card-dad");
     if (hits === 8) {
@@ -165,29 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
    let bodyfinish = document.querySelector(".win-dad");
    bodyfinish.classList.remove("win-dad")
 
+>>>>>>> fce650556c32af476736cea03f4cc4410b2e45a2
     let namePlayer = localStorage.getItem("players");
 
     primerName.textContent = namePlayer;
     nameScore.textContent = namePlayer;
     let actualPlayer = document.getElementById("actual-player-info");
     actualPlayer.textContent = `${namePlayer} is currently playing`;
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    let addBtn = document.getElementById('btn-play');
-
-    addBtn.addEventListener('click', (e) => {
-      let finishMain = document.getElementById('win-dad');
-      let mainAgain = document.getElementById('main-dad');
-    
-      finishMain.classList.add('borrar');
-    
-      mainAgain.classList.remove('borrar');
-    
-      e.preventDefault();
-    
-    });
-});
 
 
     /* Muestra las imagenes   */
@@ -214,48 +201,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-//start.jv
-//let timestop = null;
-
-// if (localStorage.getItem("players") !== null) {
- // let timer = 778;
-
- // timestop = setInterval(() => {
-  //  timer--;
-   // time.textContent = timer;
-  //  if (timer == 0) {
-  //    clearInterval(timestop);
-  //  }
- // }, 1000);
-
-//  score.textContent = "0";
-//} else {
- // primerName.textContent = "------";
- // nameScore.textContent = "------";
- // time.textContent = "777 seconds";
-//}
-
-//let btnStart = document.getElementById("btn-start");
-
-//btnStart.addEventListener("click", (e) => {
-                                   // let mainBody = document.querySelector(".main-dad");
-  //let name = document.getElementById("nombre-user").value;
-
- // localStorage.setItem("players", name);
- // localStorage.setItem("scoring", name);
-                                   // window.location.reload();
-                                    // mainBody.style.display = "none";
- // let bodyStart = document.querySelector(".main-dad");
-                                  // bodyStart.style.display = "none";
-//  let bodyCard = document.querySelector(".card-dad");
-                                  // bodyCard.classList.remove("card-dad");
- // e.preventDefault();
-
- // let namePlayer = localStorage.getItem("players");
-
- // primerName.textContent = namePlayer;
- // nameScore.textContent = namePlayer;
- // let actualPlayer = document.getElementById("actual-player-info");
- // actualPlayer.textContent = `${namePlayer} is currently playing`;
-//})
-//start.jv final
+//finish
