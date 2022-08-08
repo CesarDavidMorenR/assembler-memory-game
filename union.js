@@ -135,7 +135,6 @@ function turn(id) {
 }
 
 
-/* David - Begin */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -164,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
    bodyCard.display = "none";
     }
    let bodyfinish = document.querySelector(".win-dad");
-   bodyfinish.remove("win-dad")
+   bodyfinish.classList.remove("win-dad")
 
     let namePlayer = localStorage.getItem("players");
 
@@ -211,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  /* David -End */
+  
 
 });
 
