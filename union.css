@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    font-family: sans-serif;
+    color: white;
+    }
+    
+    .main{
+      width: 900px;
+      margin: 100px auto 50px;
+      display: flex;
+      background-color: rgba(255,255,255,0.2);
+      align-items: center;
+    }
+    
+    .container{
+      display: grid;
+      grid-template-columns: repeat(4, 2fr);
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.02);
+      text-align: center;
+    }
+
+    button{
+      height: 100px;
+      width: 100px;
+      border-radius: 8px;
+    }
+    
+    button:hover{
+      cursor: pointer;
+      background-color: antiquewhite;
+    }
+    
+    .titulo{
+    grid-column: 1/5;
+    }
+    
+    .results{
+      background-color: rgba(250, 235, 215, 0.37);
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      width: 250px;
+      height: 400px;
+      padding: 0 20px;
+    }
+    
+    .estadisticas{
+      border: 1px solid white;
+      height: 100px;
+      border-radius: 8px;
+      padding: 8px 20px;
+      box-sizing: border-box;
+    }
+
+    footer{
+      text-align: center;
+    }
+
+    img{
+      width: 85px;
+      height: 90px;
+      border-top: 10px;
+    }
+    
+    .card-dad {
+      display: none;
+    }
+    
+    #name-score{
+      color:red;
+      font-size: 50px;
+    }
+    
+    #actual-player-info{
+      color: blue;
+      font-size: 50px;
+    }

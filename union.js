@@ -1,23 +1,27 @@
+
+
+
+
 let moves = 0;
-let showmoves = document.getElementById("moves");
+let showmoves = document.getElementById("moves")
 let hits = 0;
 let showhits = document.getElementById("hits");
 let time = false;
 let timer = 30;
 let timeInitial = 30;
-let showtime = document.getElementById("tiempo");
+let showtime = document.getElementById("tiempo")
 
-let sound = new Audio("./sound/click boton.wav");
-let soundfail = new Audio("./sound/sound (fallo.wav");
-let soundgood = new Audio("./sound/sound acierto.wav");
-let winAudio = new Audio("./sound/sound ganar.wav");
-let loseAudio = new Audio("./sound/sound perder.wav");
+let sound = new Audio('./sound/click boton.wav');
+let soundfail = new Audio('./sound/sound (fallo.wav');
+let soundgood = new Audio('./sound/sound acierto.wav');
+let winAudio = new Audio('./sound/sound ganar.wav');
+let loseAudio = new Audio('./sound/sound perder.wav');
+
+
 
 //generar numeros aleatorios//
 let numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
-numbers = numbers.sort(() => {
-  return Math.random() - 0.5;
-});
+numbers = numbers.sort(() => { return Math.random() - 0.5 });
 console.log(numbers);
 
 //funcion del cambio//
@@ -27,6 +31,8 @@ let card2 = null;
 let firstresult = null;
 let secondresult = null;
 let timestop = null;
+
+
 
 //contar tiempo
 function counttime() {
@@ -42,12 +48,16 @@ function counttime() {
   }, 800);
 }
 
+/* Oculta imagenes , funcion que se llama en el listener LINEA 186,187,188  */
+
 function hideCards() {
   for (let i = 0; i <= 15; i++) {
     let tarjetabloqueada = document.getElementById(i);
     tarjetabloqueada.innerHTML = "";
   }
 }
+
+
 
 function lockCard() {
   for (let i = 0; i <= 15; i++) {
@@ -57,10 +67,18 @@ function lockCard() {
   }
 }
 
+
+
+
+
+
 function turn(id) {
+
   if (time === false) {
     counttime();
     time = true;
+
+
   }
   cardsturn++;
   console.log(cardsturn);
@@ -74,6 +92,7 @@ function turn(id) {
     //deshabilitar el primerboton//
     card1.disabled = true;
   } else if (cardsturn === 2) {
+
     //mostras segund numero//
     card2 = document.getElementById(id);
     secondresult = numbers[id];
@@ -82,16 +101,16 @@ function turn(id) {
     //deshabilitar el segundo//
     card2.disabled = true;
 
-    //movimientos//aun no
+    //movimientos//
     moves++;
-    showmoves.innerHTML = `Moves: ${moves}`; //estp//
+    showmoves.innerHTML = `Moves: ${moves}`;   //estp//
 
     if (firstresult === secondresult) {
       cardsturn = 0;
 
       //aciertos//
       hits++;
-      showhits.innerHTML = `Hits: ${hits}`; //estp//
+      showhits.innerHTML = `Hits: ${hits}`;//estp//
       soundgood.play();
 
       if (hits === 8) {
@@ -101,27 +120,29 @@ function turn(id) {
         showtime.innerHTML = `Your time: ${timeInitial - timer} segundos`;
         showmoves.innerHTML = `Moves: ${moves} go`;
       }
+
     } else {
       soundfail.play();
       //mostrar valores de forma mometanea//
       setTimeout(() => {
-        card1.innerHTML = " ";
-        card2.innerHTML = " ";
+        card1.innerHTML = ' ';
+        card2.innerHTML = ' ';
         card1.disabled = false;
         card2.disabled = false;
         cardsturn = 0;
+
       }, 800);
     }
   }
 }
 
+
 /* David - Begin */
 
 document.addEventListener("DOMContentLoaded", () => {
+
   let primerName = document.getElementById("name");
-
   let nameScore = document.getElementById("name-score");
-
   let btnStart = document.getElementById("btn-start");
 
   btnStart.addEventListener("click", (e) => {
@@ -145,19 +166,29 @@ document.addEventListener("DOMContentLoaded", () => {
     let actualPlayer = document.getElementById("actual-player-info");
     actualPlayer.textContent = `${namePlayer} is currently playing`;
 
+
+    /* Muestra las imagenes   */
+
     function lockCarad() {
       for (let i = 0; i <= 15; i++) {
         let tarjetabloqueada = document.getElementById(i);
         tarjetabloqueada.innerHTML = `<img src="./assets/${numbers[i]}.jpg" alt="">`;
+
       }
     }
 
-    lockCarad();
+    lockCarad()
+
+    /* Oculta imagenes tras 3 segundos  */
 
     setTimeout(() => {
       hideCards();
-    }, 2000);
+    }, 3000);
+
   });
 
   /* David -End */
+
 });
+
+//finish

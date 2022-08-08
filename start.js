@@ -1,15 +1,4 @@
-/* David - Begin */
 
-let primerName = document.getElementById("name");
-
-let time = document.getElementById("time");
-let nameScore = document.getElementById("name-score");
-let score = document.getElementById("score");
-
-// let myPlayers = {
-//   totalPlayers: 0,
-//   players: [],
-// }
 
 let timestop = null;
 
