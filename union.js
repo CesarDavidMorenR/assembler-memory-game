@@ -152,14 +152,14 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("scoring", name);
     // window.location.reload();
     // mainBody.style.display = "none";
+    
     let bodyStart = document.querySelector(".main-dad");
     bodyStart.style.display = "none";
     let bodyCard = document.querySelector(".card-dad");
     bodyCard.classList.remove("card-dad");
     e.preventDefault();
 
-<<<<<<< HEAD
-=======
+
 document.addEventListener("DOMContentLoaded", () => {    
     let bodyCard = document.querySelector(".card-dad");
     if (hits === 8) {
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
    let bodyfinish = document.querySelector(".win-dad");
    bodyfinish.classList.remove("win-dad")
 
->>>>>>> fce650556c32af476736cea03f4cc4410b2e45a2
+
     let namePlayer = localStorage.getItem("players");
 
     primerName.textContent = namePlayer;
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   
-
+});
 });
 
 //finish
