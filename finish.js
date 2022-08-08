@@ -7,6 +7,7 @@ let timer = 30;
 let timeInitial = 30;
 let showtime = document.getElementById("tiempo");
 
+
 let sound = new Audio('./sound/click boton.wav');
 let soundfail = new Audio('./sound/sound (fallo.wav');
 let soundgood = new Audio('./sound/sound acierto.wav');
@@ -33,7 +34,11 @@ function counttime(){
     timestop = setInterval(()=>{
         timer--;
         showtime.innerHTML = `Time: ${timer} seconds`;
-        if(timer === 0){
+        if(timer === 0){ /* FALTA LA LOGICA AQUI , QUE QUANDO GANA SE CAMBIA*/
+        let papafinal = document.getElementById("papafinal");
+        papafinal.classList.remove("finish5");
+        let tarjetafinal = document.getElementById("papajuego")
+        tarjetafinal.classList.add("finish5")
         clearInterval(timestop);
         lockCard();
         loseAudio.play();
@@ -88,11 +93,14 @@ function turn(id) {
             soundgood.play();
 
             if (hits === 8) {
+                let showtimefinish = document.getElementById("tiempofinish");
                 winAudio.play();
                 clearInterval(timestop);
                 showhits.innerHTML = `Hits: ${hits} good`;
                 showtime.innerHTML = `Your won in ${timeInitial - timer} segundos`;
                 showmoves.innerHTML = `Moves: ${moves} go`;
+                showtimefinish.innerHTML = timeInitial - timer;  
+
             }
 
 
