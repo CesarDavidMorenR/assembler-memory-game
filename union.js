@@ -109,7 +109,7 @@ function turn(id) {
       showhits.innerHTML = `Hits: ${hits}`; //estp//
       soundgood.play();
 
-      if (hits === 1) {
+      if (hits === 1) { /* Cambiar a 8 */
         winAudio.play();
         clearInterval(timestop);
         let timeDurationVar = timer - timeInitial;

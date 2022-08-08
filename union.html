@@ -10,18 +10,30 @@
   </head>
 
   <body>
+
+
     <div id="user-zonePrincipal">
       <header>
-        <nav>
+        <nav class="navbar">
           <ul class="lis-nav">
-            <li>Home</li>
-            <li>Puntuaciones</li>
-            <li>Creadores</li>
+            <li class="item-nav">Home</li>
+            <li class="item-nav">Puntuaciones</li>
+            <li class="item-nav">Creadores</li>
           </ul>
         </nav>
       </header>
 
+      
       <main>
+ 
+
+        <section id="hero" class="hero">
+          <div class="hero-container">
+           <img src="assets/memoryyy.png" alt="logomemory" class="logomemory"/>
+          </div>
+        </section>
+
+     
         <div class="user-zone">
           <form>
             <input type="text" placeholder="Nombre" id="nombre-user" />
@@ -33,11 +45,13 @@
             />
           </form>
           <section class="score-zone">
+            <div class="finalscore">
             <h1>User Stats and time</h1>
             <h3>Name</h3>
             <p id="name"></p>
             <h3>Game duration</h3>
             <p id="time"></p>
+            </div>
           </section>
         </div>
       </main>
@@ -93,7 +107,7 @@
       <!-- finish-->
       <div class="bodyfinish">
         <div class="finalgame">
-          <img src="./assets/youwin.gif" alt="win" />
+          <img src="./assets/youwin.gif" alt="win" class="winlost" />
           <p class="won">Your won in</p>
           <p id="tiempo-win">seconds</p>
           <button class="btn-play" id="btn-play-win">Play again</button>
@@ -110,7 +124,7 @@
 
     <div class="bodyfinish finish5" id="papafinal">
       <div class="finalgame">
-        <img src="./assets/loser.gif" alt="lost" />
+        <img src="./assets/loser.gif" alt="lost" class="winlost"/>
         <br />
         <button class="btn-play" id="btn-play-lost">Play again</button>
       </div>
