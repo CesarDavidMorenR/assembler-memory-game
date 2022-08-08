@@ -35,10 +35,17 @@ function counttime() {
     timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 60) {
+    if (timer === 1000) {
       clearInterval(timestop);
+
       lockCard();
+      let showtimefinish = document.getElementById("tiempofinish");
       loseAudio.play();
+      let papafinalwin = document.getElementById("papafinal");
+      papafinalwin.classList.remove("finish5");
+      let tarjetafinal = document.getElementById("main-body");
+      tarjetafinal.classList.add("finish5");
+      showtimefinish.innerHTML = timeInitial - timer;
     }
   }, 1000);
 }
@@ -59,13 +66,6 @@ function lockCard() {
     tarjetabloqueada.disabled = false;
   }
 }
-
-let bodyCard = document.querySelector(".card-dad");
-if (hits === 8) {
-  bodyCard.display = "none";
-}
-let bodyfinish = document.querySelector(".win-dad");
-bodyfinish.classList.remove("win-dad");
 
 function turn(id) {
   if (time === false) {
@@ -110,6 +110,12 @@ function turn(id) {
         showhits.innerHTML = `Hits: ${hits} hits`;
         showtime.innerHTML = `Your time: ${timeInitial - timer} seconds`;
         showmoves.innerHTML = `Moves: ${moves} <Equipo Turing😁>`;
+        let showtimefinish = document.getElementById("tiempofinish");
+        let papafinalwin = document.getElementById("main-bodyfinish");
+        papafinalwin.classList.remove("finish5");
+        let tarjetafinal = document.getElementById("main-body");
+        tarjetafinal.classList.add("finish5");
+        showtimefinish.innerHTML = timeInitial - timer;
       }
     } else {
       soundfail.play();
@@ -138,11 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("scoring", name);
     // window.location.reload();
     // mainBody.style.display = "none";
+
     
-    let bodyStart = document.querySelector(".main-dad");
-    bodyStart.style.display = "none";
-    let bodyCard = document.querySelector(".card-dad");
-    bodyCard.classList.remove("card-dad");
+    //let bodyStart = document.querySelector(".main-dad");
+    //bodyStart.style.display = "none";
+   // let bodyCard = document.querySelector(".card-dad");
+   // bodyCard.classList.remove("card-dad");
+
+    let bodyStart = document.querySelector("#user-zonePrincipal");
+    bodyStart.classList.add("finish5");
+    let bodyCard = document.querySelector("#main-body");
+    bodyCard.classList.remove("finish5");
+
     e.preventDefault();
 
     let namePlayer = localStorage.getItem("players");
@@ -167,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       hideCards();
-    }, 3000);
+    }, 500);
   });
 
 });
