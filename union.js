@@ -1,7 +1,5 @@
 
 
-
-
 let moves = 0;
 let showmoves = document.getElementById("moves")
 let hits = 0;
@@ -153,11 +151,20 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("scoring", name);
     // window.location.reload();
     // mainBody.style.display = "none";
+
     let bodyStart = document.querySelector(".main-dad");
     bodyStart.style.display = "none";
     let bodyCard = document.querySelector(".card-dad");
     bodyCard.classList.remove("card-dad");
     e.preventDefault();
+
+document.addEventListener("DOMContentLoaded", () => {    
+    let bodyCard = document.querySelector(".card-dad");
+    if (hits === 8) {
+   bodyCard.display = "none";
+    }
+   let bodyfinish = document.querySelector(".win-dad");
+   bodyfinish.remove("win-dad")
 
     let namePlayer = localStorage.getItem("players");
 
@@ -165,6 +172,23 @@ document.addEventListener("DOMContentLoaded", () => {
     nameScore.textContent = namePlayer;
     let actualPlayer = document.getElementById("actual-player-info");
     actualPlayer.textContent = `${namePlayer} is currently playing`;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    let addBtn = document.getElementById('btn-play');
+
+    addBtn.addEventListener('click', (e) => {
+      let finishMain = document.getElementById('win-dad');
+      let mainAgain = document.getElementById('main-dad');
+    
+      finishMain.classList.add('borrar');
+    
+      mainAgain.classList.remove('borrar');
+    
+      e.preventDefault();
+    
+    });
+});
 
 
     /* Muestra las imagenes   */
