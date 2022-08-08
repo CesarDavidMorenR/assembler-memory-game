@@ -46,7 +46,7 @@ function counttime() {
       tarjetafinal.classList.add("finish5");
       showtimefinish.innerHTML = timeInitial - timer;
     }
-  }, 1000);
+  }, 30);
 }
 
 /* Oculta imagenes , funcion que se llama en el listener LINEA 186,187,188  */
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       hideCards();
-    }, 500);
+    }, 3000);
   });
 });
 
