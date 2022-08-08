@@ -52,7 +52,7 @@ function counttime() {
       let showtimeWin = document.getElementById("tiempo-lost");
       showtimeWin.innerHTML = localStorage.getItem("timestop");
     }
-  }, 30);
+  }, 1000);
 }
 
 /* Oculta imagenes , funcion que se llama en el listener LINEA 186,187,188  */
@@ -187,7 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       hideCards();
-
     }, 800);
   });
 
@@ -200,10 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   btnLost.addEventListener("click", () => {
     window.location.reload();
-
-    }, 3000);
-
   });
-//});
+});
 
 //finish
