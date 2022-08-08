@@ -137,7 +137,6 @@ function turn(id) {
 }
 
 
-/* David - Begin */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -159,6 +158,17 @@ document.addEventListener("DOMContentLoaded", () => {
     bodyCard.classList.remove("card-dad");
     e.preventDefault();
 
+<<<<<<< HEAD
+=======
+document.addEventListener("DOMContentLoaded", () => {    
+    let bodyCard = document.querySelector(".card-dad");
+    if (hits === 8) {
+   bodyCard.display = "none";
+    }
+   let bodyfinish = document.querySelector(".win-dad");
+   bodyfinish.classList.remove("win-dad")
+
+>>>>>>> fce650556c32af476736cea03f4cc4410b2e45a2
     let namePlayer = localStorage.getItem("players");
 
     primerName.textContent = namePlayer;
@@ -187,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  /* David -End */
+  
 
 });
 
