@@ -35,8 +35,14 @@ button{
   width: 100px;
   border-radius: 8px;
   background-color: white;
+  background-image: url("assets/assembler.webp");
+  background-size: 95px 95px;
+  background-repeat: no-repeat;
+
   
 }
+
+
 
 
 button:hover{
@@ -69,9 +75,10 @@ footer{
   text-align: center;
 }
 img{
-  width: 85px;
-  height: 90px;
+  width: 95px;
+  height: 100px;
   border-top: 10px;
+  border-radius: 8px;
 }
 
 /* CSS FINISH */
@@ -144,3 +151,4 @@ img{
   display: none;
 
 }
+

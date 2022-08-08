@@ -3,8 +3,8 @@ let showmoves = document.getElementById("moves");
 let hits = 0;
 let showhits = document.getElementById("hits");
 let time = false;
-let timer = 30;
-let timeInitial = 30;
+let timer = 60;
+let timeInitial = 60;
 let showtime = document.getElementById("tiempo");
 
 
@@ -100,7 +100,11 @@ function turn(id) {
                 showtime.innerHTML = `Your won in ${timeInitial - timer} segundos`;
                 showmoves.innerHTML = `Moves: ${moves} go`;
                 showtimefinish.innerHTML = timeInitial - timer;  
-
+                let papafinalwin = document.getElementById("papafinalwin");
+                papafinalwin.classList.remove("finish5");
+                let tarjetafinal = document.getElementById("papajuego")
+                tarjetafinal.classList.add("finish5")
+                // EN ESA
             }
 
 
