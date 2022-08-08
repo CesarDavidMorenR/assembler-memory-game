@@ -43,7 +43,7 @@ function counttime(){
 function lockCard(){
 for(let i = 0; i<=15; i++){
     let tarjetabloqueada = document.getElementById(i);
-    tarjetabloqueada.innerHTML = numbers[i];
+    tarjetabloqueada.innerHTML = `<img src="./assets/${numbers[i]}.jpg" alt="">`;
     tarjetabloqueada.disabled = true;
 }
 }
@@ -91,10 +91,9 @@ function turn(id) {
                 winAudio.play();
                 clearInterval(timestop);
                 showhits.innerHTML = `Hits: ${hits} good`;
-                showtime.innerHTML = `blabla: ${timeInitial - timer} segundos`;
+                showtime.innerHTML = `Your time: ${timeInitial - timer} segundos`;
                 showmoves.innerHTML = `Moves: ${moves} go`;
             }
-
 
         } else {
             soundfail.play();
@@ -105,9 +104,7 @@ function turn(id) {
                 card1.disabled = false;
                 card2.disabled = false;
                 cardsturn = 0;
-            }, 1000);
+            }, 800);
         }
-
     }
-
 }
