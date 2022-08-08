@@ -1,27 +1,23 @@
-
-
-
-
 let moves = 0;
-let showmoves = document.getElementById("moves")
+let showmoves = document.getElementById("moves");
 let hits = 0;
 let showhits = document.getElementById("hits");
 let time = false;
 let timer = 0;
 let timeInitial = 0;
-let showtime = document.getElementById("tiempo")
+let showtime = document.getElementById("tiempo");
 
-let sound = new Audio('./sound/click boton.wav');
-let soundfail = new Audio('./sound/sound (fallo.wav');
-let soundgood = new Audio('./sound/sound acierto.wav');
-let winAudio = new Audio('./sound/sound ganar.wav');
-let loseAudio = new Audio('./sound/sound perder.wav');
-
-
+let sound = new Audio("./sound/click boton.wav");
+let soundfail = new Audio("./sound/sound (fallo.wav");
+let soundgood = new Audio("./sound/sound acierto.wav");
+let winAudio = new Audio("./sound/sound ganar.wav");
+let loseAudio = new Audio("./sound/sound perder.wav");
 
 //generar numeros aleatorios//
 let numbers = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
-numbers = numbers.sort(() => { return Math.random() - 0.5 });
+numbers = numbers.sort(() => {
+  return Math.random() - 0.5;
+});
 console.log(numbers);
 
 //funcion del cambio//
@@ -32,18 +28,23 @@ let firstresult = null;
 let secondresult = null;
 let timestop = null;
 
-
-
 //contar tiempo
 function counttime() {
   timestop = setInterval(() => {
     timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 60) {
+    if (timer === 1000) {
       clearInterval(timestop);
+
       lockCard();
+      let showtimefinish = document.getElementById("tiempofinish");
       loseAudio.play();
+      let papafinalwin = document.getElementById("papafinal");
+      papafinalwin.classList.remove("finish5");
+      let tarjetafinal = document.getElementById("main-body");
+      tarjetafinal.classList.add("finish5");
+      showtimefinish.innerHTML = timeInitial - timer;
     }
   }, 1000);
 }
@@ -57,8 +58,6 @@ function hideCards() {
   }
 }
 
-
-
 function lockCard() {
   for (let i = 0; i <= 15; i++) {
     let tarjetabloqueada = document.getElementById(i);
@@ -67,18 +66,10 @@ function lockCard() {
   }
 }
 
-
-
-
-
-
 function turn(id) {
-
   if (time === false) {
     counttime();
     time = true;
-
-
   }
   cardsturn++;
   console.log(cardsturn);
@@ -92,7 +83,6 @@ function turn(id) {
     //deshabilitar el primerboton//
     card1.disabled = true;
   } else if (cardsturn === 2) {
-
     //mostras segund numero//
     card2 = document.getElementById(id);
     secondresult = numbers[id];
@@ -103,14 +93,14 @@ function turn(id) {
 
     //movimientos//
     moves++;
-    showmoves.innerHTML = `Moves: ${moves}`;   //estp//
+    showmoves.innerHTML = `Moves: ${moves}`; //estp//
 
     if (firstresult === secondresult) {
       cardsturn = 0;
 
       //aciertos//
       hits++;
-      showhits.innerHTML = `Hits: ${hits}`;//estp//
+      showhits.innerHTML = `Hits: ${hits}`; //estp//
       soundgood.play();
 
       if (hits === 8) {
@@ -118,29 +108,29 @@ function turn(id) {
         clearInterval(timestop);
         showhits.innerHTML = `Hits: ${hits} hits`;
         showtime.innerHTML = `Your time: ${timeInitial - timer} seconds`;
-        showmoves.innerHTML = `Moves: ${moves}`;
+        showmoves.innerHTML = `Moves: ${moves} <Equipo Turing😁>`;
+        let showtimefinish = document.getElementById("tiempofinish");
+        let papafinalwin = document.getElementById("main-bodyfinish");
+        papafinalwin.classList.remove("finish5");
+        let tarjetafinal = document.getElementById("main-body");
+        tarjetafinal.classList.add("finish5");
+        showtimefinish.innerHTML = timeInitial - timer;
       }
-
     } else {
       soundfail.play();
       //mostrar valores de forma mometanea//
       setTimeout(() => {
-        card1.innerHTML = ' ';
-        card2.innerHTML = ' ';
+        card1.innerHTML = " ";
+        card2.innerHTML = " ";
         card1.disabled = false;
         card2.disabled = false;
         cardsturn = 0;
-
       }, 800);
     }
   }
 }
 
-
-/* David - Begin */
-
 document.addEventListener("DOMContentLoaded", () => {
-
   let primerName = document.getElementById("name");
   let nameScore = document.getElementById("name-score");
   let btnStart = document.getElementById("btn-start");
@@ -153,12 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("scoring", name);
     // window.location.reload();
     // mainBody.style.display = "none";
-    let bodyStart = document.querySelector(".main-dad");
-    bodyStart.style.display = "none";
-    let bodyCard = document.querySelector(".card-dad");
-    bodyCard.classList.remove("card-dad");
+    let bodyStart = document.querySelector("#user-zonePrincipal");
+    bodyStart.classList.add("finish5");
+    let bodyCard = document.querySelector("#main-body");
+    bodyCard.classList.remove("finish5");
     e.preventDefault();
-
     let namePlayer = localStorage.getItem("players");
 
     primerName.textContent = namePlayer;
@@ -166,29 +155,23 @@ document.addEventListener("DOMContentLoaded", () => {
     let actualPlayer = document.getElementById("actual-player-info");
     actualPlayer.textContent = `${namePlayer} is currently playing`;
 
-
     /* Muestra las imagenes   */
 
     function lockCarad() {
       for (let i = 0; i <= 15; i++) {
         let tarjetabloqueada = document.getElementById(i);
         tarjetabloqueada.innerHTML = `<img src="./assets/${numbers[i]}.jpg" alt="">`;
-
       }
     }
 
-    lockCarad()
+    lockCarad();
 
     /* Oculta imagenes tras 3 segundos  */
 
     setTimeout(() => {
       hideCards();
-    }, 3000);
-
+    }, 500);
   });
-
-  /* David -End */
-
 });
 
 //finish
