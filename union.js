@@ -34,7 +34,7 @@ function counttime() {
     timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 60) {
+    if (timer === 40) {
       clearInterval(timestop);
 
       lockCard();
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       hideCards();
-    }, 800);
+    }, 3000);
   });
 
   let btnWon = document.getElementById("btn-play-win");
