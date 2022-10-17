@@ -34,7 +34,7 @@ function counttime() {
     timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 1) {
+    if (timer === 77) {
       clearInterval(timestop);
 
       lockCard();
@@ -52,7 +52,7 @@ function counttime() {
       let showtimeWin = document.getElementById("tiempo-lost");
       showtimeWin.innerHTML = localStorage.getItem("timestop");
     }
-  }, 1000);
+  }, 1400);
 }
 
 /* Oculta imagenes , funcion que se llama en el listener LINEA 186,187,188  */
@@ -109,7 +109,7 @@ function turn(id) {
       showhits.innerHTML = `Hits: ${hits}`; //estp//
       soundgood.play();
 
-      if (hits === 1) {
+      if (hits === 8) {
         winAudio.play();
         clearInterval(timestop);
         let timeDurationVar = timer - timeInitial;
@@ -138,7 +138,7 @@ function turn(id) {
         card1.disabled = false;
         card2.disabled = false;
         cardsturn = 0;
-      }, 800);
+      }, 500);
     }
   }
 }
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       hideCards();
-    }, 3000);
+    }, 1377);
   });
 
   let btnWon = document.getElementById("btn-play-win");
