@@ -34,7 +34,7 @@ function counttime() {
     timer++;
     showtime.innerHTML = `Time: ${timer} seconds`;
 
-    if (timer === 40) {
+    if (timer === 1) {
       clearInterval(timestop);
 
       lockCard();
@@ -109,7 +109,7 @@ function turn(id) {
       showhits.innerHTML = `Hits: ${hits}`; //estp//
       soundgood.play();
 
-      if (hits === 8) {
+      if (hits === 1) {
         winAudio.play();
         clearInterval(timestop);
         let timeDurationVar = timer - timeInitial;
